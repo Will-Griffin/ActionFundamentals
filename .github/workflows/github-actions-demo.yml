@@ -13,6 +13,11 @@ on:
     - cron: '15 6 * * 0'  # minute hour day month day-of-week (0 = Sunday)
   # 4) Manually via the GitHub UI / API
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true
 jobs:
   Build:
     runs-on: ubuntu-latest
